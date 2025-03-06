@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Pull SRC") {
             steps {
-                git 'https://github.com/shrsyc/instagram-war.git'
+               git 'https://github.com/darshimackey/flipkart1.git'
             }
         }
         stage("Prepare Build") {
@@ -16,14 +16,14 @@ pipeline {
         }
         stage("Copy *.war file to ansible") {
             steps {
-                sh 'mv target/instagram.war .'
+                sh 'mv target/marcos.war .'
                 sshPublisher(
                     continueOnError: false, 
                     failOnError: true,
                     publishers: [
                         sshPublisherDesc(
-                            configName: "marcos",
-                            transfers: [sshTransfer(sourceFiles: 'instagram.war')],
+                            configName: "marcos_server",
+                            transfers: [sshTransfer(sourceFiles: 'marcos.war')],
                             verbose: true
                         )
                     ]
@@ -38,15 +38,15 @@ pipeline {
                     failOnError: true,
                     publishers: [
                         sshPublisherDesc(
-                            configName: "marcos",
+                            configName: "marcos_server",
                             transfers: [
                                 sshTransfer(sourceFiles: 'Dockerfile'),
                                 sshTransfer(execCommand: """
                                 docker rm -f tomcat || true
-                                docker rmi -f $DOCKER_USER/webapp_portfolio || true
-                                docker build -t $DOCKER_USER/webapp_portfolio .
+                                docker rmi -f $DOCKER_USER/marcos || true
+                                docker build -t $DOCKER_USER/marcos .
                                 echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                                docker push $DOCKER_USER/webapp_portfolio
+                                docker push $DOCKER_USER/marcos
                                 """)
                             ],
                             verbose: true
@@ -64,7 +64,7 @@ pipeline {
                     failOnError: true,
                     publishers: [
                         sshPublisherDesc(
-                            configName: "marcos",
+                            configName: "marcos_server",
                             transfers: [
                                 sshTransfer(sourceFiles: 'ansible1.yml'),
                                 sshTransfer(execCommand: "ansible-playbook ansible1.yml")
