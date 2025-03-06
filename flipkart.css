@@ -1,0 +1,135 @@
+nav{
+    height: 100px;
+     width: 100%;
+     background-color: white;
+
+}
+*{
+    margin: 0px;
+}
+#first{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: 5px solid rgb(34, 13, 24);
+    text-shadow: 10px 10px 8px black;
+    font-size: 25px;
+    /* border: 3px solid rgb(226, 246, 5); */
+    
+}
+#second{
+    width: 500px;
+    height: 95px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 3px solid rgb(11, 244, 85); */
+    position: relative;
+    left: 300px;
+    bottom: 100px;
+}
+#third{
+    height: 95px;
+    width: 500px;
+    /* border: 3px solid rgb(244, 11, 11);  */
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 930px;
+    bottom: 200px;
+}
+
+#five{
+    width: 100%;
+    height: 140px;
+    /* border: 3px solid rgb(112, 11, 244);
+    */
+    background-color: whitesmoke;
+     
+}
+#five section:nth-child(1){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+#names{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    width: 100%;
+    /* border: 2px red solid; */
+    height: 30px;
+}
+#names article:nth-child(1){
+    position: absolute;
+    left: 40px;
+}
+#names article:nth-child(2){
+    position: absolute;
+    left: 180px;
+}
+#names article:nth-child(3){
+    position: absolute;
+    left: 330px;
+}
+#names article:nth-child(4){
+    position: absolute;
+    left: 480px;
+}
+#names article:nth-child(5){
+    position: absolute;
+    left: 630px;
+}
+#names article:nth-child(6){
+    position: absolute;
+    left: 760px;
+}
+#names article:nth-child(7){
+    position: absolute;
+    left: 910px;
+    
+}
+#names article:nth-child(8){
+    position: absolute;
+    left: 1070px;
+}
+#names article:nth-child(9){
+    position: absolute;
+    left: 1205px;
+}
+#names article:nth-child(10){
+    position: absolute;
+    left: 1350px;
+}
+#six{
+    height: 100px;
+    width: 400px;
+    /* border: 3px solid red; */
+    position: relative;
+    top: 40px;
+    /* bottom: 2px; */
+    
+}
+#flex-container{
+    height: 200px;
+    width: 100%;
+    border: 2px black solid;
+    position: relative;
+    top: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-items{
+    height: 180px;
+    width: 220px;
+    border: 1px solid black;
+}
